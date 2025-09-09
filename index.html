@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Voyage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="#hero">Accueil</a>
+      <a href="#about">À propos</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section id="hero">
+      <div class="hero-content">
+        <h1>Explorez le monde avec nous</h1>
+        <p>Découvrez de nouvelles aventures et inspirez-vous.</p>
+      </div>
+    </section>
+    <section id="about">
+      <img src="images/about.jpg" alt="Voyageur en montagne">
+      <div class="about-text">
+        <h2>À propos</h2>
+        <p>Notre passion est de partager les plus beaux voyages autour du monde. Nous explorons les villes, les paysages et les cultures pour vous inspirer à voyager.</p>
+      </div>
+    </section>
+    <section id="destinations">
+      <h2>Destinations</h2>
+      <div class="grid">
+        <article>
+          <img src="images/paris.jpg" alt="Tour Eiffel à Paris">
+          <h3>Paris</h3>
+          <p>La Ville Lumière et son charme éternel.</p>
+        </article>
+        <article>
+          <img src="images/tokyo.jpg" alt="Ville moderne de Tokyo">
+          <h3>Tokyo</h3>
+          <p>Une métropole vibrante entre tradition et modernité.</p>
+        </article>
+        <article>
+          <img src="images/newyork.jpg" alt="Gratte-ciel de New York">
+          <h3>New York</h3>
+          <p>La ville qui ne dort jamais et son énergie unique.</p>
+        </article>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <form>
+        <label for="name">Nom</label>
+        <input id="name" type="text" placeholder="Votre nom" required>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Votre email" required>
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Blog Voyage - Tous droits réservés</p>
+    <a href="https://unsplash.com" target="_blank">Images par Unsplash</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
