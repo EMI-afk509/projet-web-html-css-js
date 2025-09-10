@@ -1,71 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Voyage</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Site Voyages - Démo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <a href="#hero">Accueil</a>
-      <a href="#about">À propos</a>
-      <a href="#destinations">Destinations</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <a id="top"></a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Voyages</div>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#hero">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <span class="theme-label">Thème</span><button id="themeToggle" aria-label="Changer de thème">🌗</button>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">☰</button>
+    </div>
   </header>
-  <main>
-    <section id="hero">
-      <div class="hero-content">
-        <h1>Explorez le monde avec nous</h1>
-        <p>Découvrez de nouvelles aventures et inspirez-vous.</p>
+
+  <!-- HERO -->
+  <section id="hero" class="hero" style="background-image: url('images/hero.jpg')">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+      <h1>Découvrir le monde, une destination à la fois</h1>
+      <p class="lead">Offres spéciales, itinéraires sur-mesure et conseils locaux pour des voyages inoubliables.</p>
+      <div class="hero-cta">
+        <a href="#destinations" class="btn">Voir les destinations</a>
+        <a href="#contact" class="btn btn-outline">Contactez-nous</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container main">
+    <!-- À propos -->
+    <section id="about" class="about">
+      <h2>À propos</h2>
+      <div class="about-inner">
+        <div class="about-text">
+          <p>Nous sommes une agence passionnée par la découverte. Notre équipe sélectionne des expériences authentiques et responsables pour vous permettre de voyager sereinement.</p>
+          <p>Que vous cherchiez une escapade urbaine, une aventure en nature ou un séjour détente, nous créons l'itinéraire qui vous ressemble.</p>
+        </div>
+        <div class="about-image">
+          <img src="images/about.jpg" alt="À propos">
+        </div>
       </div>
     </section>
-    <section id="about">
-      <img src="images/about.jpg" alt="Voyageur en montagne">
-      <div class="about-text">
-        <h2>À propos</h2>
-        <p>Notre passion est de partager les plus beaux voyages autour du monde. Nous explorons les villes, les paysages et les cultures pour vous inspirer à voyager.</p>
-      </div>
-    </section>
-    <section id="destinations">
+
+    <!-- Destinations -->
+    <section id="destinations" class="destinations">
       <h2>Destinations</h2>
-      <div class="grid">
-        <article>
-          <img src="images/paris.jpg" alt="Tour Eiffel à Paris">
-          <h3>Paris</h3>
-          <p>La Ville Lumière et son charme éternel.</p>
+      <div class="cards">
+        <article class="card">
+          <img src="images/paris.jpg" alt="Paris">
+          <div class="card-body">
+            <h3>Paris</h3>
+            <p>La ville lumière entre histoire, gastronomie et promenades romantiques.</p>
+          </div>
         </article>
-        <article>
-          <img src="images/tokyo.jpg" alt="Ville moderne de Tokyo">
-          <h3>Tokyo</h3>
-          <p>Une métropole vibrante entre tradition et modernité.</p>
+        <article class="card">
+          <img src="images/newyork.jpg" alt="New York">
+          <div class="card-body">
+            <h3>New York</h3>
+            <p>Immersion urbaine, musées de renommée et nuits animées.</p>
+          </div>
         </article>
-        <article>
-          <img src="images/newyork.jpg" alt="Gratte-ciel de New York">
-          <h3>New York</h3>
-          <p>La ville qui ne dort jamais et son énergie unique.</p>
+        <article class="card">
+          <img src="images/tokyo.jpg" alt="Tokyo">
+          <div class="card-body">
+            <h3>Tokyo</h3>
+            <p>Tradition et futurisme se rencontrent dans une expérience culturelle unique.</p>
+          </div>
         </article>
       </div>
     </section>
-    <section id="contact">
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
       <h2>Contact</h2>
-      <form>
-        <label for="name">Nom</label>
-        <input id="name" type="text" placeholder="Votre nom" required>
-        <label for="email">Email</label>
-        <input id="email" type="email" placeholder="Votre email" required>
-        <label for="message">Message</label>
-        <textarea id="message" placeholder="Votre message" required></textarea>
-        <button type="submit">Envoyer</button>
+      <p>Tu as une question ? Envoie-nous un message — nous te répondrons rapidement.</p>
+
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" required minlength="2">
+          <small class="error" id="nameError"></small>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <small class="error" id="messageError"></small>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Envoyer</button>
+          <button type="reset" class="btn btn-outline">Réinitialiser</button>
+        </div>
+
+        <p class="form-success" id="formSuccess" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
-  <footer>
-    <p>© 2025 Blog Voyage - Tous droits réservés</p>
-    <a href="https://unsplash.com" target="_blank">Images par Unsplash</a>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Voyages. Tous droits réservés.</p>
+      <p>Emilie Sawadogo — <a href="mailto:emi626680@gmail.com">emi626680@gmail.com</a></p>
+      <p><a href="https://example.com" target="_blank" rel="noopener">Lien externe</a></p>
+    </div>
   </footer>
+
+  <button id="backToTop" title="Retour en haut">↑</button>
+
   <script src="script.js"></script>
 </body>
 </html>
